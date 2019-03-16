@@ -4,18 +4,17 @@
 #
 Name     : R-csvy
 Version  : 0.3.0
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/csvy_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/csvy_0.3.0.tar.gz
 Summary  : Import and Export CSV Data with a YAML Metadata Header
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-data.table
-Requires: R-jsonlite
-Requires: R-rlang
+Requires: R-yaml
 BuildRequires : R-data.table
 BuildRequires : R-jsonlite
 BuildRequires : R-rlang
+BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
@@ -30,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543399308
+export SOURCE_DATE_EPOCH=1552731645
 
 %install
-export SOURCE_DATE_EPOCH=1543399308
+export SOURCE_DATE_EPOCH=1552731645
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,8 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library csvy|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  csvy || :
 
 
 %files
@@ -98,3 +96,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/csvy/help/paths.rds
 /usr/lib64/R/library/csvy/html/00Index.html
 /usr/lib64/R/library/csvy/html/R.css
+/usr/lib64/R/library/csvy/tests/test-all.R
+/usr/lib64/R/library/csvy/tests/testthat/test-metadata.R
+/usr/lib64/R/library/csvy/tests/testthat/test-read_csvy.R
+/usr/lib64/R/library/csvy/tests/testthat/test-write_csvy.R
+/usr/lib64/R/library/csvy/tests/testthat/test-write_metadata.R
