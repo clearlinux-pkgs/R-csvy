@@ -4,7 +4,7 @@
 #
 Name     : R-csvy
 Version  : 0.3.0
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/csvy_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/csvy_0.3.0.tar.gz
 Summary  : Import and Export CSV Data with a YAML Metadata Header
