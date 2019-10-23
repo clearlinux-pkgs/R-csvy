@@ -4,7 +4,7 @@
 #
 Name     : R-csvy
 Version  : 0.3.0
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/csvy_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/csvy_0.3.0.tar.gz
 Summary  : Import and Export CSV Data with a YAML Metadata Header
@@ -17,6 +17,7 @@ BuildRequires : R-data.table
 BuildRequires : R-jsonlite
 BuildRequires : R-yaml
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # Import and Export CSV Data With a YAML Metadata Header
@@ -30,10 +31,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569354958
+export SOURCE_DATE_EPOCH=1571813964
 
 %install
-export SOURCE_DATE_EPOCH=1569354958
+export SOURCE_DATE_EPOCH=1571813964
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
